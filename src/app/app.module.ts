@@ -12,7 +12,7 @@ import { ParentGridComponent } from './grid/parent-grid/parent-grid.component';
   declarations: [
     AppComponent,
     IgniteGridComponent,
-    ParentGridComponent
+    ParentGridComponent,
   ],
   imports: [
     BrowserModule,

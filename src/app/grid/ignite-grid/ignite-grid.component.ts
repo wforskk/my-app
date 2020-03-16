@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular';
+import { athletesData } from '../data.service';
 
 @Component({
   selector: 'app-ignite-grid',
@@ -11,15 +12,15 @@ export class IgniteGridComponent implements OnInit {
   @ViewChild('grid1', { read: IgxGridComponent })
   public grid: IgxGridComponent;
   // public localData = [{ 'test1': 'test', 'test2': 'test', 'test3': 'test', },{ 'test1': 'test', 'test2': 'test', 'test3': 'test', }]
-  // public localData =[]
+  public localData: string[];
+  public data: any[];
 
-  ngOnInit(): void {
-  }
-  @ViewChild('test')
-  private test2: ElementRef;
   constructor() {
   }
 
-  onClickMe() {
+  ngOnInit(): void {
+    this.data = athletesData;
   }
+
 }
+

@@ -1,9 +1,9 @@
-<!-- <div>
-    <div>apb</div>
-    <igx-grid #grid1 id="grid1" [data]="localData" [autoGenerate]="true">
-        <igx-column header="aaa"></igx-column>z
+<div class="grid__wrapper">
+    <igx-grid [data]="data" [autoGenerate]="false" height="550px" width="100%" displayDensity="cosy">
+        <igx-column [field]="'Id'" [header]="'Rank'" [resizable]="true"></igx-column>
+        <igx-column [field]="'Name'" [header]="'Athlete'" [resizable]="true"></igx-column>
+        <igx-column [field]="'BeatsPerMinute'" [header]="'Beats per minute'" [resizable]="true"></igx-column>
+        <igx-column [field]="'TopSpeed'" [header]="'Top Speed'" [resizable]="true"></igx-column>
+        <igx-column [field]="'TrackProgress'" [header]="'Track Progress'" [resizable]="true"></igx-column>
     </igx-grid>
-</div> -->
-
-<button (click)="onClickMe()">Click me!</button>
-<div #test></div>
+</div>

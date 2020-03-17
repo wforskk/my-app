@@ -1,9 +1,17 @@
 <div class="grid__wrapper">
-    <igx-grid [data]="data" [autoGenerate]="false" height="550px" width="100%" displayDensity="cosy">
-        <igx-column [field]="'Id'" [header]="'Rank'" [resizable]="true"></igx-column>
-        <igx-column [field]="'Name'" [header]="'Athlete'" [resizable]="true"></igx-column>
-        <igx-column [field]="'BeatsPerMinute'" [header]="'Beats per minute'" [resizable]="true"></igx-column>
-        <igx-column [field]="'TopSpeed'" [header]="'Top Speed'" [resizable]="true"></igx-column>
-        <igx-column [field]="'TrackProgress'" [header]="'Track Progress'" [resizable]="true"></igx-column>
+    <igx-grid [data]="dataList" [autoGenerate]="false" height="550px" width="100%" displayDensity="cosy">
+        <igx-column field="ID" header="ID" [resizable]="true"></igx-column>
+        <igx-column field="name" header="name" [resizable]="true"></igx-column>
+        <igx-column field="URL" header="URL" [resizable]="true">
+            <ng-template igxCell let-value>
+                <!-- <div class="text">{{ value }}</div> -->
+                <div class="fullText">{{ value }}<a>省略表示</a></div>
+                <button igxButton="flat" class="flexBtn">省略表示</button>
+            </ng-template>
+        </igx-column>
+        <igx-column field="test1" header="test1" [resizable]="true">
+        </igx-column>
+        <igx-column field="test2" header="test2" [resizable]="true"></igx-column>
+        <igx-column field="test3" header="test3" [resizable]="true"></igx-column>
     </igx-grid>
 </div>

@@ -1,0 +1,13 @@
+.text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fullText{
+    white-space: normal;
+    word-break: break-all;
+    display: flex;
+}
+.flexBtn{
+    display: flex;
+}

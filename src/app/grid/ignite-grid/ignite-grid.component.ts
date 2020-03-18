@@ -37,6 +37,13 @@ export class IgniteGridComponent implements OnInit {
       )
     }
   }// onInite
+  checkSelectable(){
+    return false;
+  }
+  public redClass = {
+    // red: () => {return true;}
+    red: true,
+  }
 
 }
 

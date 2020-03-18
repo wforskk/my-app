@@ -1,11 +1,26 @@
 <div class="grid__wrapper">
-    <igx-grid [data]="dataList" [autoGenerate]="false" height="550px" width="100%" displayDensity="cosy">
-        <igx-column field="ID" header="ID" [resizable]="true"></igx-column>
+    <igx-grid  [data]="dataList" [autoGenerate]="false" height="550px" width="100%" [paging]="true" displayDensity="cosy"
+        [rowSelection]="'multiple'">
+        <ng-template igxRowSelector let-rowContext>
+                <igx-checkbox 
+                    [checked]="rowContext.selected"
+                    [readonly]="true"
+                ></igx-checkbox>
+            </ng-template>
+        <!-- <ng-template igxHeadSelector let-headContext>
+            <ng-container *ngIf="checkSelectable(); else hidden">
+                <igx-checkbox></igx-checkbox>
+            </ng-container>
+            <ng-template #hidden>
+                <div>test</div>
+            </ng-template>
+        </ng-template> -->
+        <igx-column field="ID" header="ID" [resizable]="true" [editable]="true" [cellClasses]="redClass"></igx-column>
         <igx-column field="name" header="name" [resizable]="true"></igx-column>
         <igx-column field="URL" header="URL" [resizable]="true">
             <ng-template igxCell let-value>
-                <!-- <div class="text">{{ value }}</div> -->
-                <div class="fullText">{{ value }}<a>省略表示</a></div>
+                <div class="text">{{ value }}</div>
+                <!-- <div class="fullText">{{ value }}<a>省略表示</a></div> -->
                 <button igxButton="flat" class="flexBtn">省略表示</button>
             </ng-template>
         </igx-column>

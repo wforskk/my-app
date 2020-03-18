@@ -11,3 +11,9 @@
 .flexBtn{
     display: flex;
 }
+:host::ng-deep{
+    .red{
+        // background-color: red;
+        color: red;
+    }
+}

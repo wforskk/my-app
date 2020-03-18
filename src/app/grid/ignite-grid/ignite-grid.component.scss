@@ -12,8 +12,20 @@
     display: flex;
 }
 :host::ng-deep{
+    .checkbox{
+        color: orange;
+        background-color: orange;
+        border-color: orange;
+    }
     .red{
         // background-color: red;
         color: red;
+    }
+    .igx-grid__cbx-selection{
+        .igx-checkbox{
+            padding: 15px;
+            width: 51px;
+            display: inline-block;
+        }
     }
 }

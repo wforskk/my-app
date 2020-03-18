@@ -2,8 +2,8 @@
     <igx-grid  [data]="dataList" [autoGenerate]="false" height="550px" width="100%" [paging]="true" displayDensity="cosy"
         [rowSelection]="'multiple'">
         <ng-template igxRowSelector let-rowContext>
-                <igx-checkbox 
-                    [checked]="rowContext.selected"
+                <igx-checkbox class="checkbox"
+                    [checked]="false"
                     [readonly]="true"
                 ></igx-checkbox>
             </ng-template>

@@ -1,1 +1,8 @@
-<p>paging works!</p>
+<span>表示件数</span>
+<igx-select>
+    <igx-select-item *ngFor="let item of items" [value]="item.item" [selected]="item.init">{{ item.item }}件
+    </igx-select-item>
+    <button igxButton="icon">
+        <igx-icon>frist_pate</igx-icon>
+    </button>
+</igx-select>

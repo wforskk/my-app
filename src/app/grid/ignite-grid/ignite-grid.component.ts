@@ -22,8 +22,8 @@ export class IgniteGridComponent implements OnInit {
     for (let i = 0; i < 10; i++) {
       this._longLength += this._longLength;
     }
-    console.log('test1');
-    for (let i = 0; i < 10; i++) {
+    // console.log('test1');
+    for (let i = 0; i < 100; i++) {
       // console.log(i.toString());
       this.dataList.push(
         {

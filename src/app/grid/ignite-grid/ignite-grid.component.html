@@ -1,12 +1,9 @@
 <div class="grid__wrapper">
-    <igx-grid  [data]="dataList" [autoGenerate]="false" height="550px" width="100%" [paging]="true" displayDensity="cosy"
-        [rowSelection]="'multiple'">
+    <igx-grid [data]="dataList" [autoGenerate]="false" height="550px" width="100%" [paging]="true" displayDensity="cosy"
+        [rowSelection]="'multiple'" [paginationTemplate]="myTemplate">
         <ng-template igxRowSelector let-rowContext>
-                <igx-checkbox class="checkbox"
-                    [checked]="false"
-                    [readonly]="true"
-                ></igx-checkbox>
-            </ng-template>
+            <igx-checkbox class="checkbox" [checked]="false" [readonly]="true"></igx-checkbox>
+        </ng-template>
         <!-- <ng-template igxHeadSelector let-headContext>
             <ng-container *ngIf="checkSelectable(); else hidden">
                 <igx-checkbox></igx-checkbox>
@@ -28,5 +25,8 @@
         </igx-column>
         <igx-column field="test2" header="test2" [resizable]="true"></igx-column>
         <igx-column field="test3" header="test3" [resizable]="true"></igx-column>
+        <ng-template #myTemplate let-grid>
+            <app-paging></app-paging>
+        </ng-template>
     </igx-grid>
 </div>

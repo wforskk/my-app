@@ -2,7 +2,21 @@
 <igx-select>
     <igx-select-item *ngFor="let item of items" [value]="item.item" [selected]="item.init">{{ item.item }}件
     </igx-select-item>
-    <button igxButton="icon">
-        <igx-icon>frist_pate</igx-icon>
-    </button>
 </igx-select>
+<button igxButton="icon">
+    <igx-icon name="frist" fontSet="paging-icons"></igx-icon>
+</button>
+<button igxButton="icon">
+    <igx-icon name="previouse" fontSet="paging-icons"></igx-icon>
+</button>
+<igx-input-group type="border">
+    <input igxInput type="text" />
+</igx-input-group>
+
+<span class="totalPages"> / {{ gridData.totalPages}}</span>
+<button igxButton="icon">
+    <igx-icon name="next" fontSet="paging-icons"></igx-icon>
+</button>
+<button igxButton="icon">
+    <igx-icon name="last" fontSet="paging-icons"></igx-icon>
+</button>

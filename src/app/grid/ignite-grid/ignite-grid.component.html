@@ -26,7 +26,7 @@
         <igx-column field="test2" header="test2" [resizable]="true"></igx-column>
         <igx-column field="test3" header="test3" [resizable]="true"></igx-column>
         <ng-template #myTemplate let-grid>
-            <app-paging></app-paging>
+            <app-paging [gridData]="grid"></app-paging>
         </ng-template>
     </igx-grid>
 </div>

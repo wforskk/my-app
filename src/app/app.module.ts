@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IgxNavbarModule, IgxGridModule, IgxDatePickerModule, IgxSelectModule, IgxIconModule } from 'igniteui-angular';
+import { IgxNavbarModule, IgxGridModule, IgxDatePickerModule, IgxSelectModule, IgxIconModule, IgxButtonModule, IgxInputGroupModule } from 'igniteui-angular';
 import { IgniteGridComponent } from './grid/ignite-grid/ignite-grid.component';
 import { Hammer } from 'hammerjs/hammer'
 import { PagingComponent } from './grid/paging/paging.component';
@@ -24,6 +24,8 @@ import { PagingComponent } from './grid/paging/paging.component';
     BrowserAnimationsModule,
     IgxSelectModule,
     IgxIconModule,
+    IgxButtonModule,
+    IgxInputGroupModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,22 +1,25 @@
-<span>表示件数</span>
-<igx-select>
-    <igx-select-item *ngFor="let item of items" [value]="item.item" [selected]="item.init">{{ item.item }}件
-    </igx-select-item>
-</igx-select>
-<button igxButton="icon">
-    <igx-icon name="frist" fontSet="paging-icons"></igx-icon>
-</button>
-<button igxButton="icon">
-    <igx-icon name="previouse" fontSet="paging-icons"></igx-icon>
-</button>
-<igx-input-group type="border">
-    <input igxInput type="text" />
-</igx-input-group>
+<div class="content">
+    <span>表示件数</span>
+    <igx-select type="border" (onSelection)="selectPerPage($event)" class="perPage">
+        <igx-select-item *ngFor="let item of items" [value]="item.item" [selected]="item.init">{{ item.item }}件
+        </igx-select-item>
+    </igx-select>
+    <button igxButton="icon" (click)="first()">
+        <igx-icon name="first" fontSet="paging-icons"></igx-icon>
+    </button>
+    <button igxButton="icon" (click)="previouse()">
+        <igx-icon name="previouse" fontSet="paging-icons"></igx-icon>
+    </button>
+    <igx-input-group type="border" class="optionalPage">
+        <input igxInput type="text" neme="input" #input="ngModel" [(ngModel)]="inputValue"
+            (keyup.enter)="setOptionalPage($event)" (blur)="resetInput()" />
+    </igx-input-group>
 
-<span class="totalPages"> / {{ gridData.totalPages}}</span>
-<button igxButton="icon">
-    <igx-icon name="next" fontSet="paging-icons"></igx-icon>
-</button>
-<button igxButton="icon">
-    <igx-icon name="last" fontSet="paging-icons"></igx-icon>
-</button>
+    <div class="totalPages"> / {{ gridData.totalPages }}</div>
+    <button igxButton="icon" (click)="next()">
+        <igx-icon name="next" fontSet="paging-icons"></igx-icon>
+    </button>
+    <button igxButton="icon" (click)="last()">
+        <igx-icon name="last" fontSet="paging-icons"></igx-icon>
+    </button>
+</div>

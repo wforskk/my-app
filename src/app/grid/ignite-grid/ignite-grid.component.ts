@@ -13,7 +13,8 @@ export class IgniteGridComponent implements OnInit {
   public grid: IgxGridComponent;
   public dataList: localData[] = [];
   private _URL = 'https://jp.infragistics.com/products/ignite-ui-angular/angular/components/grid/grid.html';
-  private _longLength = 'aiuえお';
+  private _longLength = 'テスト用の文字列。';
+  private _filterTarget = ['Mac','Windows','Linux','Unix','IOS','Android'];
 
   constructor() {
   }
@@ -23,7 +24,7 @@ export class IgniteGridComponent implements OnInit {
       this._longLength += this._longLength;
     }
     // console.log('test1');
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 250; i++) {
       // console.log(i.toString());
       this.dataList.push(
         {
@@ -31,7 +32,7 @@ export class IgniteGridComponent implements OnInit {
           'name': 'abcd' + i.toString(),
           'URL': this._URL + i.toString(),
           'test1': this._longLength,
-          'test2': 'test2_' + i.toString(),
+          'test2': this._filterTarget[i%6],
           'test3': 'test3_' + i.toString()
         }
       )

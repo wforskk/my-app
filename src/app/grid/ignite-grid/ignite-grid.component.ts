@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent, SortingDirection } from 'igniteui-angular';
 import { localData } from '../data'
 
 @Component({
@@ -14,7 +14,7 @@ export class IgniteGridComponent implements OnInit {
   public dataList: localData[] = [];
   private _URL = 'https://jp.infragistics.com/products/ignite-ui-angular/angular/components/grid/grid.html';
   private _longLength = 'テスト用の文字列。';
-  private _filterTarget = ['Mac','Windows','Linux','Unix','IOS','Android'];
+  private _filterTarget = ['Mac', 'Windows', 'Linux', 'Unix', 'IOS', 'Android'];
 
   constructor() {
   }
@@ -32,13 +32,16 @@ export class IgniteGridComponent implements OnInit {
           'name': 'abcd' + i.toString(),
           'URL': this._URL + i.toString(),
           'test1': this._longLength,
-          'test2': this._filterTarget[i%6],
+          'test2': this._filterTarget[i % 6],
           'test3': 'test3_' + i.toString()
         }
       )
     }
+    this.grid.sortingExpressions = [
+      { fieldName: 'ID', dir: SortingDirection.Asc, ignoreCase: true }
+  ];
   }// onInite
-  checkSelectable(){
+  checkSelectable() {
     return false;
   }
   public redClass = {

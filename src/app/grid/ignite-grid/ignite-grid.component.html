@@ -14,19 +14,19 @@
                 <div>test</div>
             </ng-template>
         </ng-template> -->
-        <igx-column field="ID" header="ID" [resizable]="true" [editable]="true" [cellClasses]="redClass"></igx-column>
-        <igx-column field="name" header="name" [resizable]="true"></igx-column>
-        <igx-column field="URL" header="URL" [resizable]="true">
-            <ng-template igxCell let-value>
+        <igx-column field="ID" header="ID" [resizable]="true" [editable]="true" [cellClasses]="redClass" sortable="true"></igx-column>
+        <igx-column field="name" header="name" [resizable]="true" sortable="true"></igx-column>
+        <igx-column field="URL" header="URL" [resizable]="true" sortable="true">
+            <ng-template igxCell let-value sortable="true">
                 <div class="text">{{ value }}</div>
                 <!-- <div class="fullText">{{ value }}<a>省略表示</a></div> -->
                 <button igxButton="flat" class="flexBtn">省略表示</button>
             </ng-template>
         </igx-column>
-        <igx-column field="test1" header="test1" [resizable]="true">
+        <igx-column field="test1" header="test1" [resizable]="true" sortable="true">
         </igx-column>
-        <igx-column field="test2" header="test2" [resizable]="true"></igx-column>
-        <igx-column field="test3" header="test3" [resizable]="true"></igx-column>
+        <igx-column field="test2" header="test2" [resizable]="true" sortable="true"></igx-column>
+        <igx-column field="test3" header="test3" [resizable]="true" sortable="true"></igx-column>
         <ng-template #myTemplate let-grid>
             <app-paging [gridData]="grid"></app-paging>
         </ng-template>
